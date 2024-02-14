@@ -1,6 +1,6 @@
 import 'dart:convert';
+import 'Movie.dart';
 import 'package:flutter/material.dart';
-import 'package:net_wish/main.dart';
 import 'package:net_wish/Card.dart';
 import 'package:http/http.dart' as http;
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:net_wish/main.dart';
+import 'package:net_wish/Movie.dart';
 
 class MovieDetailsPage extends StatelessWidget {
   final Movie movie;
