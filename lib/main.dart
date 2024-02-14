@@ -121,48 +121,47 @@ class _MovieSearchPageState extends State<MovieSearchPage> {
                 itemCount: _searchResults.length,
                 itemBuilder: (BuildContext context, int index) {
                   final movie = _searchResults[index];
-                  return Container(
-                    child: Card(
-                      elevation: 2.0,
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => MovieDetailsPage(movie: movie),
-                            ),
-                          );
-                        },
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: [
-                            Expanded(
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(8),
-                                child: Image.network(
-                                  'https://image.tmdb.org/t/p/w185${movie.posterPath}',
-                                  fit: BoxFit.contain,
-                                ),
+                  return Card(
+                    color: Color.fromARGB(255, 65, 65, 65),
+                    elevation: 2.0,
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => MovieDetailsPage(movie: movie),
+                          ),
+                        );
+                      },
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Expanded(
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: Image.network(
+                                'https://image.tmdb.org/t/p/w185${movie.posterPath}',
+                                fit: BoxFit.contain,
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(
-                                movie.title,
-                                style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
-                                textAlign: TextAlign.center,
-                              ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              movie.title,
+                              style: TextStyle(fontWeight: FontWeight.bold, color: Colors.red),
+                              textAlign: TextAlign.center,
                             ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(
-                                movie.voteAverage.toString(),
-                                style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
-                                textAlign: TextAlign.center,
-                              ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              movie.voteAverage.toString(),
+                              style: TextStyle(fontWeight: FontWeight.bold, color: Colors.red),
+                              textAlign: TextAlign.center,
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
                   );
